@@ -1,0 +1,3 @@
+#!/bin/bash
+BASE_DIR=$(pwd)
+node $BASE_DIR/index.js $1

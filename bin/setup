@@ -1,0 +1,29 @@
+#!/bin/bash
+# if node not found auto installation is only possible for ubuntu system
+install_dependency_and_run_test(){
+    npm install
+    if [ $? -eq 0 ]; then
+       npm test
+       if [ $? -eq 0 ]; then
+          echo "Done !"
+       else
+          echo "Failed to run test cases"
+       fi
+    else
+       echo "Failed to install dependencies"
+    fi
+}
+
+node -v
+if [ $? -eq 0 ]; then
+    install_dependency_and_run_test
+else
+    echo "Failed to proceed please install node before processing"
+    echo "Installing Node ...."
+    sudo apt-get install nodejs
+    if [ $? -eq 0 ]; then
+       install_dependency_and_run_test
+    else
+       echo "failed to install nodejs. please search online for installation of nodejs on your system and retry"
+    fi
+fi

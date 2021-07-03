@@ -1,0 +1,16 @@
+{
+  "name": "parking_lot",
+  "version": "2.0.0",
+  "description": "automated ticketing system that allows customers to use parking lot without human intervention.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/jasmine/bin/jasmine.js",
+    "start": "./bin/parking_lot",
+    "setup": "./bin/setup"
+  },
+  "author": "Kishor J",
+  "license": "ISC",
+  "dependencies": {
+    "jasmine": "^3.7.0"
+  }
+}

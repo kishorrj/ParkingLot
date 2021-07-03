@@ -1,0 +1,11 @@
+#!/bin/bash
+# Just pass file name to the script
+'cd ..'
+BASE_DIR=$(pwd)
+SPECS_DIR="${BASE_DIR}/spec"
+
+if [ "$#" -eq 1 ]; then
+    npm test $SPECS_DIR/$1
+else 
+    npm test
+fi
